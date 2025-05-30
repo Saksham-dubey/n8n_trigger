@@ -16,7 +16,7 @@ async def process_batch(request: BatchRequest):
         return {"message": "initiated by fastapi"}
     
     # For batch_size >= 50, forward to n8n webhook
-    n8n_webhook_url = "https://decibio-grazitti-abhay.app.n8n.cloud/webhook/profile-creator"
+    n8n_webhook_url = "https://decibio-grazitti-abhay.app.n8n.cloud/webhook-test/profile-creator"
     
     headers = {
         "user-agent": 
