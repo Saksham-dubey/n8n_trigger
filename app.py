@@ -6,9 +6,10 @@ import uvicorn
 app = FastAPI()
 
 class BatchRequest(BaseModel):
+    name: str
     batch_size: int
     query: str
-    project_id: str
+    project_id: int
 
 @app.post("/process-batch")
 async def process_batch(request: BatchRequest):
@@ -39,6 +40,7 @@ async def process_batch(request: BatchRequest):
     
     # Pass the same information as query parameters
     params = {
+        "name":request.name,   
         "batch_size": request.batch_size,
         "query": request.query,
         "project_id": request.project_id
